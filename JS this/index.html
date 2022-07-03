@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const coffeeShop = {
+        beans: 40,
+        money: 20,
+        drinkRequirements: {
+          latte: { beanRequirement: 10, price: 5 },
+          americano: { beanRequirement: 5, price: 3 },
+          doubleShot: { beanRequirement: 15, price: 8 },
+          frenchPress: { beanRequirement: 12, price: 6 },
+        },
+        buyBeans(numBeans) {
+          if (this.money > 0) {
+            this.money -= numBeans * 0.25; // 5 beans = 1$
+            this.beans = this.beans + numBeans;
+            console.log("Buy " + numBeans + " beans.");
+          } else {
+            console.log("Sorry, we don't have enough money");
+          }
+        },
+        makeDrink: function (drinkType) {
+          // TODO: Finish this method
+          if (!Object.keys(this.drinkRequirements).includes(drinkType)) {
+            console.log("Sorry, we don't make filtered");
+          } else {
+            console.log(
+              "Amount of beans :" +
+                this.beans +
+                " Amount of money :" +
+                this.money
+            );
+            if (
+              this.drinkRequirements[`${drinkType}`].beanRequirement >
+              this.beans
+            ) {
+              this.buyBeans(
+                this.drinkRequirements[`${drinkType}`].beanRequirement -
+                  this.beans
+              );
+            }
+            this.beans -=
+              this.drinkRequirements[`${drinkType}`].beanRequirement;
+            this.money += this.drinkRequirements[`${drinkType}`].price;
+          }
+        },
+      };
+
+      coffeeShop.makeDrink("latte");
+      coffeeShop.makeDrink("americano");
+      coffeeShop.makeDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
+      coffeeShop.makeDrink("doubleShot");
+      coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+
+      coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+      coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+      coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
+    </script>
+  </body>
+</html>
