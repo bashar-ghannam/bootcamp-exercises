@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  background-color: rgb(152, 127, 127);
+}
+
+nav button {
+  padding: 20px;
+  width: 120px;
+  border: 0;
+  background-color: inherit;
+  font-weight: bolder;
+}
+
+nav button:hover {
+  background-color: antiquewhite;
+}

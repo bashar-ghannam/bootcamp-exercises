@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica&display=swap');
+
+#form {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #1abc9c;
+  border: 5px solid #16a085;
+  width: 300px;
+  height: 350px;
+  padding: 20px;
+  font-family: 'Finlandica', sans-serif;
+  font-size: large;
+  text-transform: uppercase;
+}
+
+#form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  padding-bottom: 10px;
+}
+
+input {
+  height: 25px;
+}
+
+.item {
+  flex-direction: row !important;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+#form > div:last-child {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #16a085;
+  font-weight: bold;
+}
+
+#result {
+  font-weight: bold;
+  color: #c0392b;
+}
