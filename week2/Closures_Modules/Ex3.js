@@ -1,11 +1,11 @@
 const SongsManager = function () {
-  let songs = {};
+  let _songs = {};
   const addSong = function (title, link) {
     const value = link.split('https://www.youtube.com/watch?v=').pop();
-    songs[title] = value;
+    _songs[title] = value;
   };
   const getSong = (name) => {
-    console.log('https://www.youtube.com/watch?v=' + songs[name]);
+    console.log('https://www.youtube.com/watch?v=' + _songs[name]);
   };
   return {
     addSong: addSong,

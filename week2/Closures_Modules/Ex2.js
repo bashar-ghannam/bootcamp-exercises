@@ -1,7 +1,7 @@
 const Bank = function () {
-  let money = 500;
-  const depositCash = (cash) => (money += cash);
-  const checkBalance = () => console.log(money);
+  let _money = 500;
+  const depositCash = (cash) => (_money += cash);
+  const checkBalance = () => console.log(_money);
   return {
     deposit: depositCash,
     showBalance: checkBalance,
