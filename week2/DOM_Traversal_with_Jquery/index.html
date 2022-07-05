@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="lab">
+      <div class="computer" data-id="F00T-W411">
+        <p class="BUS">CX9-3312</p>
+        <p class="MB">#000000111</p>
+        <div class="processor" id="J0Y-FU11">
+          <span class="QR">Wizz-Knob</span><span class="QR">Nooq</span
+          ><button class="generator">Cromp</button>
+        </div>
+        <div class="ram">
+          <div class="DDR"><button class="validator">Womp</button></div>
+        </div>
+      </div>
+
+      <div class="computer" data-id="G11U-X522">
+        <p class="BUS">DY0-4423</p>
+        <p class="MB">#111111222</p>
+        <div class="processor" id="K1Z-GV22">
+          <span class="QR">Quimbor</span><span class="QR">Kroon</span
+          ><button class="generator">Dimp</button>
+        </div>
+        <div class="ram">
+          <div class="DDR"><button class="validator">Ballimp</button></div>
+        </div>
+      </div>
+
+      <div class="computer" data-id="H22V-Y633">
+        <p class="BUS">EZ1-5534</p>
+        <p class="MB">#222222333</p>
+        <div class="processor" id="L2A-HW33">
+          <span class="QR">Shelk</span><span class="QR">Mutix</span
+          ><button class="generator">Phomer</button>
+        </div>
+        <div class="ram">
+          <div class="DDR"><button class="validator">Mayth</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="main">
+      <p class="nalo"></p>
+      <h1 id="corq">Pop</h1>
+    </div>
+
+    <script>
+      $('.generator').on('click', function () {
+        console.log(`Processor ID : ${$(this).closest('div').attr('id')}`);
+        console.log(
+          `Computer’s data-id: ${$(this).closest('.computer').data().id}`
+        );
+        console.log(`BUS: ${$(this).closest('.computer').find('.BUS').text()}`);
+      });
+
+      $('.validator').on('click', function () {
+        console.log(
+          `Generator’s text : ${$(this)
+            .closest('.computer')
+            .find('.generator')
+            .text()}`
+        );
+        console.log(`MB : ${$(this).closest('.computer').find('.MB').text()}`);
+        console.log(
+          `QRs: ${$(this)
+            .closest('.computer')
+            .find('span:nth-child(1)')
+            .text()} ${$(this)
+            .closest('.computer')
+            .find('span:nth-child(2)')
+            .text()}`
+        );
+      });
+
+      let x = 'flap';
+      let y = { a: 'shlop', x: 'dub' };
+      const all = [x, y];
+
+      x = all[1].x;
+      $('#corq')
+        .siblings('.nalo')
+        .append('<div>' + x + ' - Ryk</div>');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="name" placeholder="Name" />
+      <input type="text" id="wish" placeholder="Birthday wish" Post />
+      <button>Post</button>
+      <div id="validation"></div>
+      <div class="posts"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let posts = [];
+      const render = function () {
+        $('.posts').empty();
+        for (const post of posts) {
+          $('.posts').append(
+            `<div class=post><h4 style=display:inline-block>${post.name}</h4><span>: ${post.text}</span></div>`
+          );
+        }
+      };
+
+      $('button').click(function () {
+        const name = $('#name').val();
+        const wish = $('#wish').val();
+        if (name.trim() == '' || wish.trim() == '') {
+          $('#validation').append(
+            '<p>Name or Wish missing,Please enter value! </p>'
+          );
+          setTimeout(function () {
+            $('#validation').empty();
+          }, 1000);
+        } else {
+          posts.push({ name, text: wish });
+          render();
+        }
+        $('#name').val('');
+        $('#wish').val('');
+      });
+      $('.posts').on('click', '.post', function () {
+        const removedPost = $(this)[0].textContent;
+        posts = posts.filter(
+          (item) => `${item.name}: ${item.text}` != removedPost
+        );
+        render();
+      });
+      render();
+    </script>
+  </body>
+</html>
