@@ -1,0 +1,20 @@
+.item {
+  width: 100px;
+  margin: 10px;
+  box-shadow: 1px 1px 3px black;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+}
+
+[data-instock='false'] {
+  color: gray;
+  font-weight: normal;
+}
+
+#cart {
+  margin: 10px;
+}

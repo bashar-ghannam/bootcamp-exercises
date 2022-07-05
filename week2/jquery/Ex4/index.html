@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ex4</title>
+  </head>
+  <body>
+    <div id="items">
+      <div class="item" data-instock="true">Shoe</div>
+      <div class="item" data-instock="false">Umbrella</div>
+      <div class="item" data-instock="true">Melon</div>
+    </div>
+
+    <div id="cart"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let shoeCount = 0;
+      let MelonCount = 0;
+
+      $('.item').click(function () {
+        if ($(this).data().instock) {
+          if ($(this).html() == 'Shoe') {
+            if (shoeCount == 0) {
+              shoeCount++;
+              $('#cart').append(
+                `<div class=shoe-item>Shoes x${shoeCount}</div>`
+              );
+            } else {
+              shoeCount++;
+              $('.shoe-item').html(`Shoes x${shoeCount}`);
+            }
+          } else if ($(this).html() == 'Melon') {
+            if (MelonCount == 0) {
+              MelonCount++;
+              $('#cart').append(
+                `<div class=Melon-item>Melons x${MelonCount}</div>`
+              );
+            } else {
+              MelonCount++;
+              $('.Melon-item').html(`Melons x${MelonCount}`);
+            }
+          }
+        }
+      });
+      $('#cart').on('click', '.shoe-item', function () {
+        if (shoeCount == 1) {
+          $(this).remove();
+          shoeCount = 0;
+        } else {
+          shoeCount--;
+          $('.shoe-item').html(`Shoes x${shoeCount}`);
+        }
+      });
+
+      $('#cart').on('click', '.Melon-item', function () {
+        if (MelonCount == 1) {
+          $(this).remove();
+          MelonCount = 0;
+        } else {
+          MelonCount--;
+          $('.Melon-item').html(`Melons x${MelonCount}`);
+        }
+      });
+    </script>
+  </body>
+</html>

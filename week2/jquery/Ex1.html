@@ -8,13 +8,22 @@
     <title>jQuery101</title>
   </head>
   <body>
-    <div class="feedme">Feed me more</div>
+    <ul></ul>
+    <input type="text" placeholder="Human Name" />
+    <button>Add Human</button>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const addName = function (name) {
+        $('input').val('');
+      };
 
-    <script src="index.js"></script>
+      $('button').on('click', function () {
+        addName($('input').val());
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Color Picker</title>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div id="colors">
+      <span data-color="#2980b9">Blue</span>
+      <span data-color="#e74c3c">Red</span>
+      <span data-color="#f1c40f">Yellow</span>
+      <span data-color="#27ae60">Green</span>
+    </div>
+    <div id="posts"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var count = $('#colors span').length + 1;
+      $('#colors span').addClass('picker');
+      for (let index = 1; index < count; index++) {
+        $(`#colors span:nth-child(${index})`).css(
+          'backgroundColor',
+          $(`#colors span:nth-child(${index})`).data().color
+        );
+        $(`#colors span:nth-child(${index})`).click(function () {
+          $('.box').css('backgroundColor', $(this).data().color);
+        });
+      }
+    </script>
+  </body>
+</html>

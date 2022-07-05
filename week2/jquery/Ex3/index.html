@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ex3</title>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $('body').append('<div class=box></div>');
+      $('body').append('<div class=box></div>');
+      $('body').on('mouseenter', '.box', function () {
+        $(this).css('backgroundColor', '#eb6810');
+      });
+      $('body').on('mouseleave', '.box', function () {
+        $(this).css('backgroundColor', '#8e44ad');
+      });
+    </script>
+  </body>
+</html>
