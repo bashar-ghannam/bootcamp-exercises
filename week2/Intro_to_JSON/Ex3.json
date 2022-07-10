@@ -1,0 +1,20 @@
+[
+  {
+    "name": "chiken",
+    "weigh": "10",
+    "location": "palestine",
+    "isEndangered": "true",
+    "foods": ["a1", "a2", "a3"],
+    "predatory": ["cat", "dog"],
+    "delicious": 5
+  },
+  {
+    "name": "pig",
+    "weigh": "30",
+    "location": "jordan",
+    "isEndangered": "false",
+    "foods": ["b1", "b2", "b3"],
+    "predatory": ["hyena", "dog"],
+    "delicious": 2
+  }
+]
