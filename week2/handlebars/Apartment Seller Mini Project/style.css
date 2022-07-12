@@ -1,0 +1,163 @@
+* {
+  color: #ddc9b3;
+}
+
+body {
+  background-color: #ddc9b3;
+}
+
+#search {
+  margin: 20px;
+}
+
+input {
+  margin: 5px;
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: #443729;
+  font-weight: bold;
+}
+
+label {
+  font: 300 16px/1.7 'Open Sans', sans-serif;
+  color: #443729;
+  cursor: pointer;
+}
+
+.form-radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  color: #666;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+}
+.form-radio:checked::before {
+  position: absolute;
+  font: 13px/1 'Open Sans', sans-serif;
+  left: 11px;
+  top: 7px;
+  content: '\02143';
+  transform: rotate(40deg);
+}
+.form-radio:hover {
+  background-color: #f7f7f7;
+}
+.form-radio:checked {
+  background-color: #f1f1f1;
+}
+
+.result {
+  font-family: 'Raleway', sans-serif;
+  display: grid;
+  grid-template-columns: 350px 90px 280px;
+  grid-template-areas:
+    'i la a'
+    'i lpr p'
+    'i lr r'
+    'i lpark park';
+  box-shadow: 1px 1px 3px #0a1612;
+  margin: 20px;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #443729;
+  align-items: center;
+}
+
+.check-group {
+  height: 35px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #7a6c5d;
+  border: none;
+  color: #ddc9b3;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 2px solid #443729;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:active {
+  background-color: #443729;
+}
+
+.result > img {
+  max-width: 325px;
+  grid-area: i;
+  box-shadow: 1px 1px 3px black;
+  border-radius: 5px;
+}
+
+.result > .label {
+  font-weight: bold;
+}
+
+.result > .l-addr {
+  grid-area: la;
+}
+
+.result > .l-price {
+  grid-area: lpr;
+}
+
+.result > .l-rooms {
+  grid-area: lr;
+}
+
+.result > .l-park {
+  grid-area: lpark;
+}
+
+.result > .l-immediate {
+}
+
+.result > .address {
+  grid-area: a;
+}
+
+.price {
+  grid-area: p;
+}
+
+.result > .rooms {
+  grid-area: r;
+}
+
+.result > .parking {
+  grid-area: park;
+}
+
+.result > .immediate {
+}
+
+.no-match {
+  color: #dd6300;
+  display: inline-block;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Raleway', sans-serif;
+}
