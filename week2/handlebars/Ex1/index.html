@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handlebars</title>
+  </head>
+  <body>
+    <div id="classmates"></div>
+
+    <script id="multi-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each items}}
+          <li>{{this}}</li>
+        {{/each}}
+      </ul>
+    </script>
+    <div id="animals">Animals</div>
+    <div id="languages">Languages</div>
+
+    <script id="classmates-template" type="text/x-handlebars-template">
+      {{#each classmates}}
+        {{#if socialNetwork}}
+          <p>{{name}} : {{description}}</p>
+        {{/if}}
+      {{/each}}
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
