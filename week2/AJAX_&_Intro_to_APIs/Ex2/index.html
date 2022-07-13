@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex2</title>
+  </head>
+  <body>
+    <div id="container" style="margin: 20px 30px;">
+      <label for="value">Enter the value :</label>
+      <input type="text" id="value">
+      <br>
+      <div  style="margin-top: 20px;">
+        <label for="Type">Select type : </label>
+        <input type="radio" name="Type" value="isbn">ISBN</input>
+        <input type="radio" name="Type" value="title">Title</input>
+      </div>
+      <br>
+      <button onclick="fetch()" style="margin-top: 10px;">Get Data</button>
+      <div class="render" style="margin-top: 10px;"></div>
+    </div>
+
+    </script> <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
