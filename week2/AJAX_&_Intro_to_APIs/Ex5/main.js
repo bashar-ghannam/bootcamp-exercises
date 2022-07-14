@@ -14,9 +14,10 @@ const render = function (res) {
 
 $('button').click(function () {
   const gifName = $('input').val();
+  const API_KEY = 'RUzNaymWvDEGHc7vcQQnV8YVUMTB7afr';
   $.ajax({
     method: 'GET',
-    url: `https://api.giphy.com/v1/gifs/search?api_key=RUzNaymWvDEGHc7vcQQnV8YVUMTB7afr&limit=1&q=${gifName}`,
+    url: `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&limit=1&q=${gifName}`,
     success: render,
     error: function (xhr, text, error) {
       console.log(text);
