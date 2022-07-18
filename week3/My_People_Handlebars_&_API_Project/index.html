@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My People</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My People</h1>
+      <div class="grid-container"></div>
+    </div>
+
+    <script id="MyPeople-template" type="text/x-handlebars-template">
+      {{#each results}}
+        <div class='grid-item'>
+          <div>{{name.first}} {{name.last}}</div>
+          <a>{{email}}</a>
+        </div>
+      {{/each}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
