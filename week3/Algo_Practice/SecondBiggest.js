@@ -13,5 +13,5 @@ const SecondBiggest = function (array) {
   return secendMax;
 };
 
-const arr = [-1, -5, -43, -7, -23, -4, 0];
+const arr = [1, 5, 43, 7, 23, 4, 0];
 console.log(SecondBiggest(arr));
