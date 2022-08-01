@@ -15,3 +15,5 @@ const SecondBiggest = function (array) {
 
 const arr = [1, 5, 43, 7, 23, 4, 0];
 console.log(SecondBiggest(arr));
+
+
