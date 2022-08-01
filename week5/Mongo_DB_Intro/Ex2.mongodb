@@ -1,0 +1,9 @@
+
+use('test-db')
+
+
+// EX2
+db.linkedon.find({},{"firstName":1,salary:1,_id:0}).sort({salary:-1}).limit(3)
+// { "firstName" : "Alice", "salary" : 69900 }
+// { "firstName" : "Eva", "salary" : 69500 }
+// { "firstName" : "Maisie", "salary" : 69400 }

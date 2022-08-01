@@ -1,0 +1,45 @@
+
+use('test-db')
+
+// Extension 3
+db.linkedon.aggregate([
+   { $match: {
+      $and : [
+         { $or : [
+         {"currentCompany.name":"Google"},{"currentCompany.name":"Apple"}
+         ]},
+         { "currentCompany.industry": "Tech" }
+      ]
+   }},
+   {
+   $group: {
+      _id: "$lastName",
+      sum: { $sum: "$salary" },
+      num: { $sum: 1 },
+   }
+   },
+   {$project:{
+      average: { $divide: [ "$sum", "$num" ]}}},
+]).sort({average:-1})
+
+
+// { "_id" : "Ortiz", "average" : 39500 }
+// { "_id" : "Russell", "average" : 38700 }
+// { "_id" : "Morales", "average" : 38400 }
+// { "_id" : "Reynolds", "average" : 38300 }
+// { "_id" : "Gonzales", "average" : 38000 }
+// { "_id" : "Bennett", "average" : 35100 }
+// { "_id" : "Foster", "average" : 34850 }
+// { "_id" : "Barnes", "average" : 33600 }
+// { "_id" : "Sullivan", "average" : 32900 }
+// { "_id" : "Chavez", "average" : 32000 }
+// { "_id" : "Gutierre", "average" : 31500 }
+// { "_id" : "Griffin", "average" : 30400 }
+// { "_id" : "Hughes", "average" : 30200 }
+// { "_id" : "Perry", "average" : 30100 }
+// { "_id" : "Price", "average" : 28900 }
+// { "_id" : "Ross", "average" : 28500 }
+// { "_id" : "Myers", "average" : 27100 }
+// { "_id" : "Jenkins", "average" : 23800 }
+// { "_id" : "Wood", "average" : 23500 }
+// { "_id" : "Fisher", "average" : 23400 }

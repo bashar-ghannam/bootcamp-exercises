@@ -1,0 +1,7 @@
+
+use('test-db')
+
+// Ex1
+db.linkedon.count( { salary: { $gt: 25000 } } )
+//231
+

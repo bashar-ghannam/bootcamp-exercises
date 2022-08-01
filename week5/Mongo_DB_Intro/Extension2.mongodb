@@ -1,0 +1,29 @@
+use('test-db')
+
+
+// Extension 2
+db.linkedon.aggregate([
+   { $match: { "currentPosition": "Analyst" } },
+   { $group: {
+    _id: "$currentCompany.name",
+      sum: { $sum: "$salary" },
+      num: { $sum: 1 },
+    }
+   },
+   {$project:{ FailPercent: { $divide: [ "$sum", "$num" ]}}},
+])
+
+
+// { "_id" : "Microsoft", "averageSalary" : 32000 }
+// { "_id" : "Nintendo", "averageSalary" : 14550 }
+// { "_id" : "Amazon", "averageSalary" : 31300 }
+// { "_id" : "Google", "averageSalary" : 32650 }
+// { "_id" : "Goldman Sachs", "averageSalary" : 37200 }
+// { "_id" : "J.P Morgan", "averageSalary" : 48960 }
+// { "_id" : "Suisse Bank", "averageSalary" : 24975 }
+// { "_id" : "Chase", "averageSalary" : 40580 }
+// { "_id" : "Robin Hood", "averageSalary" : 50500 }
+// { "_id" : "Dell", "averageSalary" : 28700 }
+// { "_id" : "HP", "averageSalary" : 24880 }
+// { "_id" : "Twitter", "averageSalary" : 24325 }
+// { "_id" : "Capital One", "averageSalary" : 38533.333333333336 }

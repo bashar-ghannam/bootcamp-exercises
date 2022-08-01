@@ -1,0 +1,14 @@
+
+use('test-db')
+
+//Extension 1
+db.linkedon.aggregate([
+  { $match: { "currentCompany.name": "Apple" } },
+  { $group: { _id: "$currentCompany.industry", count: { $sum: 1 } } }
+])
+
+
+// { "_id" : "Tech", "count" : 10 }
+// { "_id" : "Manufacturing", "count" : 26 }
+// { "_id" : "Sales", "count" : 51 }
+// { "_id" : "Retail", "count" : 28 }

@@ -1,0 +1,11 @@
+
+use('test-db')
+
+//Ex3
+db.linkedon.count({
+ $and : [
+  {"currentCompany.name":"Walmart"},
+  { salary: { $gte: 7000 }}
+ ]
+})
+//24

@@ -1,0 +1,10 @@
+
+use('test-db')
+
+//Ex4
+db.linkedon.find({
+ $or : [
+  {"currentCompany.industry":"Sales"},{"currentCompany.industry":"Retail"}
+ ]
+}).sort({salary:-1}).limit(1)
+//Holly Gonzales, working at Groupon for 20,000
