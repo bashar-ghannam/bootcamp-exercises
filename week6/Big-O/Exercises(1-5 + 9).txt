@@ -1,0 +1,10 @@
+Ex1 : O(n)
+Ex2 : O(n)
+Ex3 : O(1)
+Ex4 : O(nm)
+Ex5 : O(n)
+Ex9 : 
+red : O(n2)
+blue : O(n)
+yellow : O(logn)
+green : O(1)
