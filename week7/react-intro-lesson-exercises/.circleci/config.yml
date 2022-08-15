@@ -1,0 +1,48 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.0
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+    working_directory: ~/repo
+    steps:
+      - run:
+          name: update-build-status
+          command: >
+           curl -XPUT -d '{ "repoName": "'$CIRCLE_PROJECT_REPONAME'", "buildUrl":"'$CIRCLE_BUILD_URL'", "status": "RUNNING", "commitSha": "'$CIRCLE_SHA1'", "buildId": "'$CIRCLE_BUILD_NUM'", "testResults": "{}"}' 'https://hnvbmypjh9.execute-api.eu-central-1.amazonaws.com/prod/circleci-builds'
+      - checkout
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Clone tests repo
+          command: git clone https://github.com/Elevationacademy/code-activity-checks.git --branch react-intro-lesson-exercises ~/repo/tests      
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: npm install
+      
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm run test-silent
+
+      - store_artifacts:
+          path: test-results.json
+      - run:
+          name: update-build-status
+          command: >
+            curl -XPUT -d '{ "repoName": "'$CIRCLE_PROJECT_REPONAME'", "buildUrl":"'$CIRCLE_BUILD_URL'", "status": "COMPLETED", "commitSha": "'$CIRCLE_SHA1'", "buildId": "'$CIRCLE_BUILD_NUM'", "testResults": "{}"}' 'https://hnvbmypjh9.execute-api.eu-central-1.amazonaws.com/prod/circleci-builds'    
