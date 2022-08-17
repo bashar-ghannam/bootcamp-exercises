@@ -10,7 +10,7 @@ class Spamalot extends Component {
     return (
       <div className="exercise" id="ex-2">
         {arr.map((item) => {
-          return <Spam id={item} />;
+          return <Spam/>;
         })}
       </div>
     );
