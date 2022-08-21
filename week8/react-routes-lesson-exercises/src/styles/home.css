@@ -1,0 +1,105 @@
+#u-input{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+
+input{
+    display: inline-block;
+    width: 65vw;
+    padding: 1vh;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    color: #2c3e50;
+    vertical-align: bottom; /*aligns bottom of two divs with the same parent*/
+}
+
+#button{
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 1vh;
+    width: 5vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 2px #bdd4cd inset;
+    border-left: none;
+    cursor: pointer;
+}
+
+#button:active{
+    background-color: #2980b9
+}
+
+#home-title{
+    text-align: center;
+    margin-top:35vh;
+    color: #34495e;
+    text-shadow: -1px -1px 0 #ecf0f1, 1px -1px 0 #ecf0f1, -1px 1px 0 #ecf0f1, 1px 1px 0 #ecf0f1;
+}
+
+#home-container{
+    margin-left: 10vh;
+    margin-right: 10vh;
+    display: grid;
+    grid-gap: 20px;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 150px;
+    grid-template-areas: 
+    "wz w w"
+    "b p d"
+}
+
+#home-container > div{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    box-shadow: 3px 4px 5px #888888;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#home-container > div:active{
+    border: inset
+}
+
+.main-directory-text{
+    line-height: 150px;
+    font-size: 2em;
+    color: #ecf0f1;
+    text-shadow: -1px -1px 0 #2c3e50, 1px -1px 0 #2c3e50, -1px 1px 0 #2c3e50, 1px 1px 0 #2c3e50;
+}
+
+#world{
+    grid-area: w;
+    background-image: url("https://i.pinimg.com/736x/df/a6/3a/dfa63a07fa427839ece6dcf51b3f6a20--fantasy-world-map-fantasy-city.jpg");
+}
+
+#wizards{
+    grid-area: wz;
+    background-image: url("https://i.pinimg.com/originals/2d/be/d4/2dbed420e8d6225cf3ca6d8c831b9ad6.jpg");
+}
+
+#bestiary{
+    grid-area: b;
+    background-color: green;
+    background-image: url("https://img00.deviantart.net/f69b/i/2015/231/e/8/magma_beast_by_awesomeplex-d96cl5r.jpg");
+}
+
+#potions{
+    grid-area: p;
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/007/756/508/large/adrian-brito-fantasypotionbottles-featured.jpg?1508303309");
+}
+
+#deities{
+    grid-area: d;
+    background-image: url("https://artfiles.alphacoders.com/565/56528.jpg");
+}

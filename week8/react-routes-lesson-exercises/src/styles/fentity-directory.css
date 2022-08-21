@@ -1,0 +1,20 @@
+#fentities-title{
+    margin: 5vh;
+    font-size: 4vh;
+}
+
+.mini{
+    cursor: pointer;
+    margin: 5vh;
+}
+
+
+.directory-img{
+    height: 15vh;
+    vertical-align: middle;
+}
+.mini > span{
+    vertical-align:middle;
+    margin-left: 2vw;
+    font-size: 4vw;
+}

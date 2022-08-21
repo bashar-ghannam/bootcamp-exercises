@@ -1,0 +1,33 @@
+{
+  "name": "react-inputs",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "jest-cli": "^23.4.2",
+    "jest-json-reporter": "^1.2.2",
+    "jest-test-runner": "git+https://github.com/Elevationacademy/jest-test-runner.git",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^23.4.2",
+    "jest-expect-message": "^1.0.0",
+    "react-test-renderer": "^16.4.2",
+    "jest-transform-stub": "^1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "test-silent": "jest || exit 0",
+    "eject": "react-scripts eject",
+    "tests": "tests"
+  }
+}
