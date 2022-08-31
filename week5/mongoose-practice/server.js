@@ -63,7 +63,7 @@ mongoose.connect('mongodb://localhost/mongoose-practice');
 // /*=====================================================
 // Create People Collection
 // =======================================================*/
-// var colors = ['brown', 'black', 'red', 'yellow', 'green', 'grey'];
+// var colors = ['brown','black', 'red', 'yellow', 'green', 'grey'];
 // var getColor = function () {
 //   return colors[Math.floor(Math.random() * colors.length)];
 // };

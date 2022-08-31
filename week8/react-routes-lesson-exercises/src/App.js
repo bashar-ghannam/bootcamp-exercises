@@ -58,7 +58,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div id="home-background"></div>
+          <div id="home-background"></div> 
           <div id="main-links">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
