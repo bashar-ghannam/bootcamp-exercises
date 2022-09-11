@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { Item } from '../src/stores/Item';
 import { ShoppingList } from '../src/stores/ShoppingList';
 
 
